@@ -1,4 +1,3 @@
-
 class WeatherResponse {
   final String? cityName;
   final String? temp;
@@ -14,8 +13,19 @@ class WeatherResponse {
   final String? icon;
 
   WeatherResponse({
-    this.cityName, this.temp, this.feelsLike, this.maxTemp, this.minTemp, 
-    this.pressure, this.windSpeed, this.sunRise, this.sunSet, this.humidity, this.description, this.icon});
+    this.cityName,
+    this.temp,
+    this.feelsLike,
+    this.maxTemp,
+    this.minTemp,
+    this.pressure,
+    this.windSpeed,
+    this.sunRise,
+    this.sunSet,
+    this.humidity,
+    this.description,
+    this.icon,
+  });
 
   factory WeatherResponse.fromJson(Map<String, dynamic> json) {
     final cityName = json['name'].toString();
@@ -32,7 +42,17 @@ class WeatherResponse {
     final icon = json['weather'][0]['icon'];
 
     return WeatherResponse(
-      cityName: cityName, temp: temp, feelsLike: feelsLike, maxTemp: maxTemp, minTemp: minTemp, pressure: 
-      pressure, windSpeed: windSpeed, sunRise: sunRise, sunSet: sunSet, humidity: humidity, description: description, icon: icon);
+        cityName: cityName,
+        temp: temp,
+        feelsLike: feelsLike,
+        maxTemp: maxTemp,
+        minTemp: minTemp,
+        pressure: pressure,
+        windSpeed: windSpeed,
+        sunRise: sunRise,
+        sunSet: sunSet,
+        humidity: humidity,
+        description: description,
+        icon: icon);
   }
 }

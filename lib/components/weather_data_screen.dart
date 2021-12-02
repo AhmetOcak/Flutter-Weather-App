@@ -14,7 +14,17 @@ class WeatherDataScreen extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 1,
       height: MediaQuery.of(context).size.height / 4,
       child: Card(
-        color: Color.fromRGBO(0, 0, 0, 1),
+        shape: const RoundedRectangleBorder(
+          side: BorderSide(
+            color: Colors.white,
+            style: BorderStyle.solid,
+            width: 2,
+          ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(30.0),
+          ),
+        ),
+        color: const Color.fromRGBO(255, 255, 255, 0.1),
         child: Padding(
           padding: const EdgeInsets.only(left: 30.0, right: 30.0),
           child: Column(

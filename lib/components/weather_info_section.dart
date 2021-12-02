@@ -22,7 +22,9 @@ class WeatherInfo extends StatelessWidget {
         // ),
         Text(
           '15',
-          style: Constants().weatherInfoStyle().copyWith(fontWeight: FontWeight.w500),
+          style: Constants()
+              .weatherInfoStyle()
+              .copyWith(fontWeight: FontWeight.w500),
         ),
         Text(
           title,

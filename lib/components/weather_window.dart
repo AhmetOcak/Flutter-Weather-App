@@ -11,7 +11,7 @@ class WeatherWindow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 80),
+          padding: const EdgeInsets.only(right: 80, top: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [

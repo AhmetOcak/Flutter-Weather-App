@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 class FindButton extends StatelessWidget {
-  const FindButton({
+  FindButton({
     Key? key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
+        
         Navigator.pop(context);
       },
       style: ButtonStyle(

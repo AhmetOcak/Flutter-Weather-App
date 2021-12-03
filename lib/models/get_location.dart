@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -20,14 +21,16 @@ Future<List<Placemark>> getCurrentLocation() async {
     return Future.error(
         'Location permissions are permanently denied, we cannot request permissions.');
   }
-
+  
   Position position = await Geolocator.getCurrentPosition(
     desiredAccuracy: LocationAccuracy.high,
   );
-  List<Placemark> placemarks = await placemarkFromCoordinates(
+
+  Future<List<Placemark>> placemarks = placemarkFromCoordinates(
     position.latitude,
-    position.longitude,
+    position.longitude, 
   );
 
   return placemarks;
 }
+

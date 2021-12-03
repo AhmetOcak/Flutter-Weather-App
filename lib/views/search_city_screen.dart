@@ -19,7 +19,7 @@ class SearchScreen extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               SearchCityForm(),
               SizedBox(
                 height: 20,

@@ -42,17 +42,18 @@ class WeatherResponse {
     final icon = json['weather'][0]['icon'];
 
     return WeatherResponse(
-        cityName: cityName,
-        temp: temp,
-        feelsLike: feelsLike,
-        maxTemp: maxTemp,
-        minTemp: minTemp,
-        pressure: pressure,
-        windSpeed: windSpeed,
-        sunRise: sunRise,
-        sunSet: sunSet,
-        humidity: humidity,
-        description: description,
-        icon: icon);
+      cityName: cityName,
+      temp: temp,
+      feelsLike: feelsLike,
+      maxTemp: maxTemp,
+      minTemp: minTemp,
+      pressure: pressure,
+      windSpeed: windSpeed,
+      sunRise: sunRise,
+      sunSet: sunSet,
+      humidity: humidity,
+      description: description,
+      icon: icon,
+    );
   }
 }

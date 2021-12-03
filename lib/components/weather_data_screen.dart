@@ -2,9 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:wheather_app/components/weather_info_section.dart';
 
 class WeatherDataScreen extends StatelessWidget {
-  const WeatherDataScreen({
-    Key? key,
-  }) : super(key: key);
+  String? icon = '';
+  String? feelsLike = 'xx';
+  String? windSpeed = 'xx';
+  String? pressure = 'xx';
+  String? sunrise = 'xx';
+  String? humidity = 'xx';
+  String? sunset = 'xx';
+
+  WeatherDataScreen({
+    this.icon,
+    this.feelsLike,
+    this.windSpeed,
+    this.pressure,
+    this.sunrise,
+    this.humidity,
+    this.sunset,
+  });
 
   @override
   Widget build(BuildContext context) {

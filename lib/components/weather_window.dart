@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class WeatherWindow extends StatelessWidget {
-  const WeatherWindow({
-    Key? key,
-  }) : super(key: key);
+  WeatherWindow({
+    this.cityName = 'city name',
+    this.degree = 'XX',
+    this.weatherForecast = 'weatherForecast',
+  });
+
+  final String? cityName;
+  final String? degree;
+  final String? weatherForecast;
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +20,18 @@ class WeatherWindow extends StatelessWidget {
           padding: const EdgeInsets.only(right: 80, top: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children:  [
               Text(
-                'İstanbul',
-                style: TextStyle(
+                cityName!,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.w300,
                 ),
               ),
               Text(
-                '20°',
-                style: TextStyle(
+                '$degree°',
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 150,
                 ),
@@ -33,11 +39,11 @@ class WeatherWindow extends StatelessWidget {
             ],
           ),
         ),
-        const RotatedBox(
+        RotatedBox(
           quarterTurns: 1,
           child: Text(
-            "hava durumu",
-            style: TextStyle(
+            weatherForecast!,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 25,
               fontWeight: FontWeight.w400,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wheather_app/components/back_button.dart';
+import 'package:wheather_app/components/error_dialog.dart';
 import 'package:wheather_app/constants/constants.dart';
 import 'package:wheather_app/models/weather_model.dart';
 import 'package:wheather_app/services/weather_service.dart';
+import 'package:wheather_app/status_code.dart';
 import 'package:wheather_app/views/home_screen.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -119,20 +121,30 @@ class _SearchScreenState extends State<SearchScreen> {
   // find button
   TextButton FindButton(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        setState(() {
-          showSpinner = true;
-        });
-        FocusScope.of(context).unfocus();
-        search(widget.cityName).then((value) => {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeScreen(
-                      weatherResponse: _weatherResponse,
-                    ),
-                  )),
-            });
+      onPressed: () async {
+        if (widget.cityName.isEmpty) {
+          showDialog(
+            context: context,
+            builder: (_) => ErrorDialog(
+              errorMesage: 'Please enter a city name.',
+              errorTitle: 'Blank Empty',
+            ),
+          );
+        } else {
+          setState(() {
+            showSpinner = true;
+          });
+          FocusScope.of(context).unfocus();
+          search(widget.cityName).then((value) => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(
+                        weatherResponse: _weatherResponse,
+                      ),
+                    )),
+              });
+        }
       },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(

@@ -6,10 +6,9 @@ import 'package:wheather_app/models/get_location.dart';
 import 'package:wheather_app/models/weather_model.dart';
 import 'package:wheather_app/services/weather_service.dart';
 import 'package:wheather_app/views/home_screen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingScreen extends StatefulWidget {
-  LoadingScreen({Key? key}) : super(key: key);
-
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
@@ -35,21 +34,18 @@ class _LoadingScreenState extends State<LoadingScreen> {
               );
             })),
           });
-    } on PermissionDeniedException catch(e) {
+    } on PermissionDeniedException catch (e) {
       showDialog(
         context: context,
         builder: (_) => ErrorDialog(
           errorMesage: e.toString(),
-          killTheApp: true,
         ),
       );
-    }
-    catch (e) {
+    } catch (e) {
       showDialog(
         context: context,
         builder: (_) => ErrorDialog(
           errorMesage: e.toString(),
-          killTheApp: false,
         ),
       );
     }
@@ -63,15 +59,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueAccent,
+    return const Scaffold(
+      backgroundColor: Colors.blue,
       body: Center(
-        child: TextButton(
-          onPressed: () {},
-          child: Text(
-            'see',
-            style: TextStyle(color: Colors.yellow),
-          ),
+        child: SpinKitDualRing(
+          color: Colors.white,
+          size: 100.0,
         ),
       ),
     );

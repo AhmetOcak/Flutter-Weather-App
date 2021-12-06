@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:wheather_app/components/error_dialog.dart';
 import 'package:wheather_app/models/get_location.dart';
 import 'package:wheather_app/models/weather_model.dart';
 import 'package:wheather_app/services/weather_service.dart';
@@ -24,14 +26,33 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getLocationWeather() async {
-    location = await getCurrentLocation();
-    search(location[0].administrativeArea.toString()).then((value) => {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return HomeScreen(
-              weatherResponse: _weatherResponse,
-            );
-          })),
-        });
+    try {
+      location = await getCurrentLocation();
+      search(location[0].administrativeArea.toString()).then((value) => {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return HomeScreen(
+                weatherResponse: _weatherResponse,
+              );
+            })),
+          });
+    } on PermissionDeniedException catch(e) {
+      showDialog(
+        context: context,
+        builder: (_) => ErrorDialog(
+          errorMesage: e.toString(),
+          killTheApp: true,
+        ),
+      );
+    }
+    catch (e) {
+      showDialog(
+        context: context,
+        builder: (_) => ErrorDialog(
+          errorMesage: e.toString(),
+          killTheApp: false,
+        ),
+      );
+    }
   }
 
   Future<WeatherResponse> search(String cityName) async {

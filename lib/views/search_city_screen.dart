@@ -54,77 +54,12 @@ class _SearchScreenState extends State<SearchScreen> {
                   padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width / 4,
                   ),
-                  child: TextField(
-                    cursorColor: Colors.black,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                    ),
-                    decoration: const InputDecoration(
-                      hintText: "Enter city name",
-                      hintStyle: TextStyle(
-                        color: Colors.black38,
-                        fontSize: 20,
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                          width: 1,
-                          style: BorderStyle.solid,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                          width: 1,
-                          style: BorderStyle.solid,
-                        ),
-                      ),
-                    ),
-                    onChanged: (val) {
-                      widget.cityName = val;
-                    },
-                  ),
+                  child: SearchCityForm(),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      showSpinner = true;
-                    });
-                    FocusScope.of(context).unfocus();
-                    search(widget.cityName).then((value) => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomeScreen(
-                                  weatherResponse: _weatherResponse,
-                                ),
-                              )),
-                        });
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      Colors.black,
-                    ),
-                    padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(
-                        horizontal: 20.0,
-                        vertical: 15.0,
-                      ),
-                    ),
-                  ),
-                  child: const Text(
-                    'Find',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                ),
+                FindButton(context),
                 const SizedBox(
                   height: 20,
                 ),
@@ -142,6 +77,80 @@ class _SearchScreenState extends State<SearchScreen> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  TextField SearchCityForm() {
+    return TextField(
+      cursorColor: Colors.black,
+      style: const TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+      ),
+      decoration: const InputDecoration(
+        hintText: "Enter city name",
+        hintStyle: TextStyle(
+          color: Colors.black38,
+          fontSize: 20,
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
+            width: 1,
+            style: BorderStyle.solid,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
+            width: 1,
+            style: BorderStyle.solid,
+          ),
+        ),
+      ),
+      onChanged: (val) {
+        widget.cityName = val;
+      },
+    );
+  }
+
+  // find button
+  TextButton FindButton(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        setState(() {
+          showSpinner = true;
+        });
+        FocusScope.of(context).unfocus();
+        search(widget.cityName).then((value) => {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(
+                      weatherResponse: _weatherResponse,
+                    ),
+                  )),
+            });
+      },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          Colors.black,
+        ),
+        padding: MaterialStateProperty.all(
+          const EdgeInsets.symmetric(
+            horizontal: 20.0,
+            vertical: 15.0,
+          ),
+        ),
+      ),
+      child: const Text(
+        'Find',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25,
+          fontWeight: FontWeight.w300,
         ),
       ),
     );

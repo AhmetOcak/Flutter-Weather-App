@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:wheather_app/models/get_location.dart';
+import 'package:wheather_app/models/weather_model.dart';
+import 'package:wheather_app/services/weather_service.dart';
+import 'package:wheather_app/views/home_screen.dart';
+
+class LoadingScreen extends StatefulWidget {
+  LoadingScreen({Key? key}) : super(key: key);
+
+  @override
+  _LoadingScreenState createState() => _LoadingScreenState();
+}
+
+class _LoadingScreenState extends State<LoadingScreen> {
+  WeatherResponse _weatherResponse = WeatherResponse();
+  final DataService _dataService = DataService();
+  List<Placemark> location = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getLocationWeather();
+  }
+
+  void getLocationWeather() async {
+    location = await getCurrentLocation();
+    search(location[0].administrativeArea.toString()).then((value) => {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return HomeScreen(
+              weatherResponse: _weatherResponse,
+            );
+          })),
+        });
+  }
+
+  Future<WeatherResponse> search(String cityName) async {
+    WeatherResponse response = await _dataService.getWeatherData(cityName);
+    _weatherResponse = response;
+    return _weatherResponse;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blueAccent,
+      body: Center(
+        child: TextButton(
+          onPressed: () {},
+          child: Text(
+            'see',
+            style: TextStyle(color: Colors.yellow),
+          ),
+        ),
+      ),
+    );
+  }
+}

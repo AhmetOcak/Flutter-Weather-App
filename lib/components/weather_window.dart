@@ -40,7 +40,7 @@ class WeatherWindow extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 20.0),
+          padding: const EdgeInsets.only(top: 20.0),
           child: RotatedBox(
             quarterTurns: 1,
             child: Text(

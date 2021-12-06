@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ErrorDialog extends StatelessWidget {
-  ErrorDialog({required this.errorMesage});
+  ErrorDialog({required this.errorMesage, required this.errorTitle});
 
   final String errorMesage;
+  final String errorTitle;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 0.7),
-      title: const Text(
-        'Location Error',
-        style: TextStyle(
+      title: Text(
+        errorTitle,
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 25,
           fontWeight: FontWeight.bold,

@@ -39,6 +39,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         context: context,
         builder: (_) => ErrorDialog(
           errorMesage: e.toString(),
+          errorTitle: 'Location Error',
         ),
       );
     } catch (e) {
@@ -46,6 +47,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         context: context,
         builder: (_) => ErrorDialog(
           errorMesage: e.toString(),
+          errorTitle: 'Location Error',
         ),
       );
     }

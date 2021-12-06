@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   String readTimestamp(int timestamp) {
     var date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
-
     return date.toString().substring(11, 16);
   }
 

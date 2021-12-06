@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wheather_app/views/home_screen.dart';
 import 'package:wheather_app/views/search_city_screen.dart';
 

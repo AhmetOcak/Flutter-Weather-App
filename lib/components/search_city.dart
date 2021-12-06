@@ -14,7 +14,7 @@ class SearchCityForm extends StatelessWidget {
       child: const TextField(
         cursorColor: Colors.black,
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 20,
         ),
         decoration: InputDecoration(

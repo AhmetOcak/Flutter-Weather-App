@@ -20,7 +20,7 @@ class WeatherWindow extends StatelessWidget {
           padding: const EdgeInsets.only(right: 80, top: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  [
+            children: [
               Text(
                 cityName!,
                 style: const TextStyle(

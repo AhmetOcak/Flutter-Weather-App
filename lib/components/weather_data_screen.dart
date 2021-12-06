@@ -55,7 +55,6 @@ class WeatherDataScreen extends StatelessWidget {
                     title: 'wind speed',
                     value: windSpeed,
                     iconData: WeatherIcons.strong_wind,
-                    
                   ),
                   WeatherInfo(
                     title: 'pressure',

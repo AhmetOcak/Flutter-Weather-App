@@ -20,16 +20,15 @@ Future<List<Placemark>> getCurrentLocation() async {
     return Future.error(
         'Location permissions are permanently denied, we cannot request permissions.');
   }
-  
+
   Position position = await Geolocator.getCurrentPosition(
     desiredAccuracy: LocationAccuracy.high,
   );
 
   Future<List<Placemark>> placemarks = placemarkFromCoordinates(
     position.latitude,
-    position.longitude, 
+    position.longitude,
   );
 
   return placemarks;
 }
-

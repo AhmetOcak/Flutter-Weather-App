@@ -4,12 +4,11 @@ class FindButton extends StatelessWidget {
   FindButton({
     Key? key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        
         Navigator.pop(context);
       },
       style: ButtonStyle(

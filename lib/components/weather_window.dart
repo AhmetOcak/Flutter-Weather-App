@@ -39,14 +39,17 @@ class WeatherWindow extends StatelessWidget {
             ],
           ),
         ),
-        RotatedBox(
-          quarterTurns: 1,
-          child: Text(
-            weatherForecast!,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 25,
-              fontWeight: FontWeight.w400,
+        Padding(
+          padding: EdgeInsets.only(top: 20.0),
+          child: RotatedBox(
+            quarterTurns: 1,
+            child: Text(
+              weatherForecast!,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
         ),

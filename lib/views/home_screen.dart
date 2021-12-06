@@ -16,10 +16,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   String readTimestamp(int timestamp) {
     var date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
 
     return date.toString().substring(11, 16);
+  }
+
+  bool checkTime() {
+    // true = light    false = dark
+    final hour = DateTime.now().hour;
+    if(6 <= hour && hour <= 18) {
+      return true;
+    }
+    return false;
   }
 
   @override
@@ -28,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           SvgPicture.asset(
-            'assets/images/darkBG.svg',
+            checkTime() ? 'assets/images/lightBG.svg' : 'assets/images/darkBG.svg',
             alignment: Alignment.center,
             fit: BoxFit.cover,
           ),

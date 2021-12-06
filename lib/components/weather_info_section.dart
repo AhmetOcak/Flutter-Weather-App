@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:weather_icons/weather_icons.dart';
 import 'package:wheather_app/constants/constants.dart';
 
 class WeatherInfo extends StatelessWidget {
-  final String title;
-  // final String icon;
-  // final String value;
+  WeatherInfo({required this.title, required this.value, required this.iconData});
 
-  WeatherInfo({required this.title});
+  final String title;
+  final IconData iconData;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Image(
-        //   image: NetworkImage(
-        //     'http://openweathermap.org/img/wn/' +
-        //         _weatherResponse.icon.toString()  +
-        //         '.png',
-        //   ),
-        // ),
+        BoxedIcon(
+          iconData,
+          color: Colors.white,
+        ),
         Text(
-          '15',
+          value,
           style: Constants()
               .weatherInfoStyle()
               .copyWith(fontWeight: FontWeight.w500),

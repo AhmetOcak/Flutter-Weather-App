@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:wheather_app/components/weather_info_section.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class WeatherDataScreen extends StatelessWidget {
-  String? icon = '';
-  String? feelsLike = 'xx';
-  String? windSpeed = 'xx';
-  String? pressure = 'xx';
-  String? sunrise = 'xx';
-  String? humidity = 'xx';
-  String? sunset = 'xx';
+  String feelsLike;
+  String windSpeed;
+  String pressure;
+  String sunrise;
+  String humidity;
+  String sunset;
 
   WeatherDataScreen({
-    this.icon,
-    this.feelsLike,
-    this.windSpeed,
-    this.pressure,
-    this.sunrise,
-    this.humidity,
-    this.sunset,
+    this.feelsLike = 'xx',
+    this.windSpeed = 'xx',
+    this.pressure = 'xx',
+    this.sunrise = 'xx',
+    this.humidity = 'xx',
+    this.sunset = 'xx',
   });
 
   @override
@@ -26,7 +25,7 @@ class WeatherDataScreen extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 40.0),
       padding: const EdgeInsets.all(20.0),
       width: MediaQuery.of(context).size.width / 1,
-      height: MediaQuery.of(context).size.height / 4,
+      height: MediaQuery.of(context).size.height / 3.5,
       child: Card(
         shape: const RoundedRectangleBorder(
           side: BorderSide(
@@ -49,12 +48,19 @@ class WeatherDataScreen extends StatelessWidget {
                 children: [
                   WeatherInfo(
                     title: 'feels like',
+                    value: feelsLike,
+                    iconData: WeatherIcons.thermometer,
                   ),
                   WeatherInfo(
                     title: 'wind speed',
+                    value: windSpeed,
+                    iconData: WeatherIcons.strong_wind,
+                    
                   ),
                   WeatherInfo(
                     title: 'pressure',
+                    value: pressure,
+                    iconData: WeatherIcons.barometer,
                   ),
                 ],
               ),
@@ -63,12 +69,18 @@ class WeatherDataScreen extends StatelessWidget {
                 children: [
                   WeatherInfo(
                     title: 'sunrise',
+                    value: sunrise,
+                    iconData: WeatherIcons.sunrise,
                   ),
                   WeatherInfo(
                     title: 'humidity',
+                    value: humidity,
+                    iconData: WeatherIcons.humidity,
                   ),
                   WeatherInfo(
                     title: 'sunset',
+                    value: sunset,
+                    iconData: WeatherIcons.sunset,
                   ),
                 ],
               ),

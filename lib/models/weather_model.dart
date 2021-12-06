@@ -10,7 +10,6 @@ class WeatherResponse {
   final String? sunSet;
   final String? humidity;
   final String? description;
-  final String? icon;
 
   WeatherResponse({
     this.cityName,
@@ -24,7 +23,6 @@ class WeatherResponse {
     this.sunSet,
     this.humidity,
     this.description,
-    this.icon,
   });
 
   factory WeatherResponse.fromJson(Map<String, dynamic> json) {
@@ -39,7 +37,6 @@ class WeatherResponse {
     final sunSet = json['sys']['sunset'].toString();
     final humidity = json['main']['humidity'].toString();
     final description = json['weather'][0]['description'].toString();
-    final icon = json['weather'][0]['icon'];
 
     return WeatherResponse(
       cityName: cityName,
@@ -53,7 +50,6 @@ class WeatherResponse {
       sunSet: sunSet,
       humidity: humidity,
       description: description,
-      icon: icon,
     );
   }
 }

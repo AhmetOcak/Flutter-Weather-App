@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:wheather_app/models/weather_model.dart';
 import 'package:wheather_app/views/home_screen.dart';
+import 'package:wheather_app/views/loading_screen.dart';
 import 'package:wheather_app/views/search_city_screen.dart';
 
 void main() {
@@ -9,7 +10,8 @@ void main() {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
+        '/': (context) => LoadingScreen(),
+        '/home': (context) => HomeScreen(weatherResponse: WeatherResponse(),),
         '/search': (context) => SearchScreen(),
       },
     ),

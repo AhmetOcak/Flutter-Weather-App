@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ErrorDialog extends StatelessWidget {
-  ErrorDialog({required this.errorMesage, required this.errorTitle});
+  ErrorDialog({required this.errorMesage, required this.errorTitle, this.killTheApp = false});
 
   final String errorMesage;
   final String errorTitle;
+  bool killTheApp;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class ErrorDialog extends StatelessWidget {
         Center(
           child: TextButton(
             onPressed: () {
-              Navigator.pop(context); // problem is here
+              killTheApp ? SystemNavigator.pop() : Navigator.pop(context);
             },
             child: const Text(
               'OK',

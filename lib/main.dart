@@ -11,7 +11,9 @@ void main() {
       initialRoute: '/',
       routes: {
         '/': (context) => LoadingScreen(),
-        '/home': (context) => HomeScreen(weatherResponse: WeatherResponse(),),
+        '/home': (context) => HomeScreen(
+              weatherResponse: WeatherResponse(),
+            ),
         '/search': (context) => SearchScreen(),
       },
     ),

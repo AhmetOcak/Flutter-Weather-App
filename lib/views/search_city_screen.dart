@@ -10,7 +10,7 @@ class SearchScreen extends StatefulWidget {
   SearchScreen({this.cityName = ''});
 
   String cityName;
-  
+
   @override
   State<SearchScreen> createState() => _SearchScreenState();
 }

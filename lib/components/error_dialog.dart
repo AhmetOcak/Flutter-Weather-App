@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ErrorDialog extends StatelessWidget {
-  ErrorDialog({required this.errorMesage, required this.errorTitle, this.killTheApp = false});
+  ErrorDialog(
+      {required this.errorMesage,
+      required this.errorTitle,
+      this.killTheApp = false});
 
   final String errorMesage;
   final String errorTitle;
-  bool killTheApp;
+  final bool killTheApp;
 
   @override
   Widget build(BuildContext context) {

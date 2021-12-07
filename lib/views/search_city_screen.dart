@@ -21,7 +21,7 @@ class _SearchScreenState extends State<SearchScreen> {
   final DataService _dataService = DataService();
   bool showSpinner = false;
 
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
 
   Future<WeatherResponse> search(String cityName) async {
     try {
@@ -73,12 +73,12 @@ class _SearchScreenState extends State<SearchScreen> {
                   padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width / 4,
                   ),
-                  child: SearchCityForm(),
+                  child: searchCityForm(),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                FindButton(context),
+                findButton(context),
                 const SizedBox(
                   height: 20,
                 ),
@@ -101,7 +101,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  TextField SearchCityForm() {
+  TextField searchCityForm() {
     return TextField(
       controller: _textEditingController,
       cursorColor: Colors.black,
@@ -137,7 +137,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   // find button
-  TextButton FindButton(BuildContext context) {
+  TextButton findButton(BuildContext context) {
     return TextButton(
       onPressed: () async {
         if (widget.cityName.isEmpty) {

@@ -44,7 +44,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           killTheApp: true,
         ),
       );
-    } on PlatformException catch (e) {
+    } on PlatformException {
       showDialog(
         context: context,
         builder: (_) => ErrorDialog(

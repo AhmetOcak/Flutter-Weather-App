@@ -10,7 +10,7 @@ class SearchScreen extends StatefulWidget {
   SearchScreen({this.cityName = ''});
 
   String cityName;
-
+  
   @override
   State<SearchScreen> createState() => _SearchScreenState();
 }
@@ -21,6 +21,8 @@ class _SearchScreenState extends State<SearchScreen> {
   final DataService _dataService = DataService();
   bool showSpinner = false;
 
+  TextEditingController _textEditingController = TextEditingController();
+
   Future<WeatherResponse> search(String cityName) async {
     try {
       WeatherResponse response = await _dataService.getWeatherData(cityName);
@@ -29,6 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
     } catch (e) {
       setState(() {
         showSpinner = false;
+        _textEditingController.clear();
       });
       return Future.error(showDialog(
           context: context,
@@ -100,6 +103,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   TextField SearchCityForm() {
     return TextField(
+      controller: _textEditingController,
       cursorColor: Colors.black,
       style: const TextStyle(
         color: Colors.black,

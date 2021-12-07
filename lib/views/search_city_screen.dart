@@ -4,7 +4,6 @@ import 'package:wheather_app/components/error_dialog.dart';
 import 'package:wheather_app/constants/constants.dart';
 import 'package:wheather_app/models/weather_model.dart';
 import 'package:wheather_app/services/weather_service.dart';
-import 'package:wheather_app/status_code.dart';
 import 'package:wheather_app/views/home_screen.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -23,9 +22,24 @@ class _SearchScreenState extends State<SearchScreen> {
   bool showSpinner = false;
 
   Future<WeatherResponse> search(String cityName) async {
-    WeatherResponse response = await _dataService.getWeatherData(cityName);
-    _weatherResponse = response;
-    return _weatherResponse;
+    try {
+      WeatherResponse response = await _dataService.getWeatherData(cityName);
+      _weatherResponse = response;
+      return _weatherResponse;
+    } catch (e) {
+      setState(() {
+        showSpinner = false;
+      });
+      return Future.error(showDialog(
+          context: context,
+          builder: (context) {
+            return ErrorDialog(
+              errorMesage:
+                  'We could not find the city you entered. please check the city name.',
+              errorTitle: 'City not found',
+            );
+          }));
+    }
   }
 
   @override

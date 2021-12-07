@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const SearchButton(),
                     WeatherWindow(
-                      cityName: widget.weatherResponse.cityName,
+                      cityName: widget.weatherResponse.cityName!.replaceAll(RegExp('Province'), ''),
                       degree:
                           widget.weatherResponse.temp.toString().split('.')[0],
                       weatherForecast: widget.weatherResponse.description,

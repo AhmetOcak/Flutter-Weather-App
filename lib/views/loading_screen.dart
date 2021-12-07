@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:wheather_app/components/error_dialog.dart';
@@ -39,6 +40,15 @@ class _LoadingScreenState extends State<LoadingScreen> {
         context: context,
         builder: (_) => ErrorDialog(
           errorMesage: e.toString(),
+          errorTitle: 'Location Error',
+          killTheApp: true,
+        ),
+      );
+    } on PlatformException catch (e) {
+      showDialog(
+        context: context,
+        builder: (_) => ErrorDialog(
+          errorMesage: 'We couldn\'t get the location. This error can be caused by bad internet. Please restart the application.',
           errorTitle: 'Location Error',
           killTheApp: true,
         ),

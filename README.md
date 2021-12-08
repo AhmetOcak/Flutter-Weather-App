@@ -27,11 +27,10 @@ Background images are taken from Vecteezy.com.
 </p>
 
 <p align="left" width="100%">
-  <img src="https://user-images.githubusercontent.com/73544434/145066041-61595778-6540-43a1-a70f-43d3ea506308.png" width="240" height="480" />
+  <img src="https://user-images.githubusercontent.com/73544434/145232012-c1099c58-d1d4-47b9-a69c-558cde664f34.png" width="240" height="480" />
   <img src="https://user-images.githubusercontent.com/73544434/145066056-19cc2b89-52f0-47a0-929b-cd335791861c.png" width="240" height="480" />
   <img src="https://user-images.githubusercontent.com/73544434/145066031-79ee6968-9a2f-42a9-8a22-78d67e9f43ad.png" width="240" height="480" />
 </p>
-
 
 
 

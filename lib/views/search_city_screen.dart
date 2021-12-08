@@ -145,7 +145,7 @@ class _SearchScreenState extends State<SearchScreen> {
             context: context,
             builder: (_) => ErrorDialog(
               errorMesage: 'Please enter a city name.',
-              errorTitle: 'Blank Empty',
+              errorTitle: 'Empty Input',
             ),
           );
         } else {

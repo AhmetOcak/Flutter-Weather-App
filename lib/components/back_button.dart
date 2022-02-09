@@ -11,9 +11,9 @@ class BackArrowButton extends StatelessWidget {
       onPressed: () {
         Navigator.pop(context);
       },
-      icon: const Icon(
+      icon: Icon(
         Icons.arrow_back,
-        size: 45,
+        size: MediaQuery.of(context).size.width * 0.1,
         color: Colors.white,
       ),
     );

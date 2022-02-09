@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class WeatherWindow extends StatelessWidget {
-  WeatherWindow({
+  const WeatherWindow({
+    Key? key,
     this.cityName = 'city name',
     this.degree = 'XX',
     this.weatherForecast = 'weatherForecast',
-  });
+  }) : super(key: key);
 
   final String? cityName;
   final String? degree;
@@ -18,39 +19,39 @@ class WeatherWindow extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            right: MediaQuery.of(context).size.width / 3,
-            top: MediaQuery.of(context).size.height / 20,
+            right: MediaQuery.of(context).size.width * 0.3,
+            top: MediaQuery.of(context).size.height * 0.05,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 cityName!,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 40,
+                  fontSize: Theme.of(context).textTheme.headline2!.fontSize,
                   fontWeight: FontWeight.w300,
                 ),
               ),
               Text(
                 '$degree°',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 150,
+                  fontSize: Theme.of(context).textTheme.headline1!.fontSize! * 1.5,
                 ),
               )
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.05,),
           child: RotatedBox(
             quarterTurns: 1,
             child: Text(
               weatherForecast!,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 25,
+                fontSize: Theme.of(context).textTheme.headline5!.fontSize,
                 fontWeight: FontWeight.w400,
               ),
             ),

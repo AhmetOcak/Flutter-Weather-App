@@ -11,21 +11,26 @@ class WeatherDataScreen extends StatelessWidget {
   String sunset;
 
   WeatherDataScreen({
+    Key? key,
     this.feelsLike = 'xx',
     this.windSpeed = 'xx',
     this.pressure = 'xx',
     this.sunrise = 'xx',
     this.humidity = 'xx',
     this.sunset = 'xx',
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 30,),
-      padding: const EdgeInsets.all(20.0),
-      width: MediaQuery.of(context).size.width / 1,
-      height: MediaQuery.of(context).size.height / 3.5,
+      margin: EdgeInsets.only(
+        bottom: MediaQuery.of(context).size.height * 0.010,
+      ),
+      padding: EdgeInsets.all(
+        MediaQuery.of(context).size.width * 0.010,
+      ),
+      width: MediaQuery.of(context).size.width * 1,
+      height: MediaQuery.of(context).size.height * 0.3,
       child: Card(
         shape: const RoundedRectangleBorder(
           side: BorderSide(
@@ -40,8 +45,8 @@ class WeatherDataScreen extends StatelessWidget {
         color: const Color.fromRGBO(255, 255, 255, 0.1),
         child: Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width / 12,
-            right: MediaQuery.of(context).size.width / 12,
+            left: MediaQuery.of(context).size.width * 0.1,
+            right: MediaQuery.of(context).size.width * 0.1,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

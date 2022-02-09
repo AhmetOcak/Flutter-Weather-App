@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ErrorDialog extends StatelessWidget {
-  ErrorDialog(
-      {required this.errorMesage,
-      required this.errorTitle,
-      this.killTheApp = false});
+  const ErrorDialog({
+    Key? key,
+    required this.errorMesage,
+    required this.errorTitle,
+    this.killTheApp = false,
+  }) : super(key: key);
 
   final String errorMesage;
   final String errorTitle;
@@ -17,17 +19,17 @@ class ErrorDialog extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(255, 255, 255, 0.7),
       title: Text(
         errorTitle,
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.black,
-          fontSize: 25,
+          fontSize: Theme.of(context).textTheme.headline5!.fontSize,
           fontWeight: FontWeight.bold,
         ),
       ),
       content: Text(
         errorMesage.toString(),
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.black,
-          fontSize: 20,
+          fontSize: Theme.of(context).textTheme.headline6!.fontSize,
           fontWeight: FontWeight.w400,
         ),
       ),
@@ -46,11 +48,11 @@ class ErrorDialog extends StatelessWidget {
             onPressed: () {
               killTheApp ? SystemNavigator.pop() : Navigator.pop(context);
             },
-            child: const Text(
+            child: Text(
               'OK',
               style: TextStyle(
                 color: Colors.blueAccent,
-                fontSize: 20,
+                fontSize: Theme.of(context).textTheme.headline5!.fontSize,
                 fontWeight: FontWeight.w500,
               ),
             ),

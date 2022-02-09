@@ -11,14 +11,19 @@ class SearchButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 20),
+          padding: EdgeInsets.only(
+            right: MediaQuery.of(context).size.width * 0.05,
+          ),
           child: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/search');
+              Navigator.pushNamed(
+                context,
+                '/search',
+              );
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.search,
-              size: 45,
+              size: MediaQuery.of(context).size.width * 0.1,
               color: Colors.white,
             ),
           ),

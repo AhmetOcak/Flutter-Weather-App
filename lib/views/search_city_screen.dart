@@ -7,7 +7,7 @@ import 'package:wheather_app/services/weather_service.dart';
 import 'package:wheather_app/views/home_screen.dart';
 
 class SearchScreen extends StatefulWidget {
-  SearchScreen({this.cityName = ''});
+  SearchScreen({Key? key, this.cityName = ''}) : super(key: key);
 
   String cityName;
 

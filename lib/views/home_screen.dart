@@ -7,7 +7,7 @@ import 'package:wheather_app/components/weather_window.dart';
 import 'package:wheather_app/models/weather_model.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({required this.weatherResponse});
+  const HomeScreen({required this.weatherResponse});
 
   final WeatherResponse weatherResponse;
 
@@ -50,7 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const SearchButton(),
                     WeatherWindow(
-                      cityName: widget.weatherResponse.cityName!.replaceAll(RegExp('Province'), ''),
+                      cityName: widget.weatherResponse.cityName!
+                          .replaceAll(RegExp('Province'), ''),
                       degree:
                           widget.weatherResponse.temp.toString().split('.')[0],
                       weatherForecast: widget.weatherResponse.description,

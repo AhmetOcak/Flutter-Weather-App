@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class DataService {
   Future<WeatherResponse> getWeatherData(String city) async {
     final queryParameters = {
-      'appid': 'your api key', // Enter your api key here
+      'appid': '18fcba115a2815e21a21379f65b994ed', // Enter your api key here
       'q': city,
       'units': 'metric'
     };

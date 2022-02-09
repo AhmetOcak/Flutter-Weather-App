@@ -10,6 +10,8 @@ import 'package:wheather_app/views/home_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({Key? key}) : super(key: key);
+
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }

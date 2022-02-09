@@ -3,8 +3,12 @@ import 'package:weather_icons/weather_icons.dart';
 import 'package:wheather_app/constants/constants.dart';
 
 class WeatherInfo extends StatelessWidget {
-  WeatherInfo(
-      {required this.title, required this.value, required this.iconData});
+  const WeatherInfo({
+    Key? key,
+    required this.title,
+    required this.value,
+    required this.iconData,
+  }) : super(key: key);
 
   final String title;
   final IconData iconData;
@@ -21,9 +25,9 @@ class WeatherInfo extends StatelessWidget {
         ),
         Text(
           value,
-          style: Constants()
-              .weatherInfoStyle()
-              .copyWith(fontWeight: FontWeight.w500),
+          style: Constants().weatherInfoStyle().copyWith(
+                fontWeight: FontWeight.w500,
+              ),
         ),
         Text(
           title,

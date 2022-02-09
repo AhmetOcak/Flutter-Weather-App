@@ -8,6 +8,12 @@ Weather information is obtained with the Open Weather api. Gets the current loca
 
 <br/>
 
+weather_service classında belirtilen yere api keyinizi yazınız. 
+
+Write the api key to the place specified in the weather service class.
+
+<br/>
+
 Arkaplan resimleri Vecteezy.com alınmıştır.
 
 Background images are taken from Vecteezy.com.

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wheather_app/components/back_button.dart';
-import 'package:wheather_app/components/error_dialog.dart';
-import 'package:wheather_app/constants/constants.dart';
-import 'package:wheather_app/models/weather_model.dart';
-import 'package:wheather_app/services/weather_service.dart';
-import 'package:wheather_app/views/home_screen.dart';
+import 'package:wheather_app/core/components/button/back_button.dart';
+import 'package:wheather_app/core/components/alert_dialog/alert_dialog.dart';
+import 'package:wheather_app/core/constants/constants.dart';
+import 'package:wheather_app/core/feature/home/model/weather_model.dart';
+import 'package:wheather_app/core/feature/home/services/weather_service.dart';
+import 'package:wheather_app/core/feature/home/view/home_view.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key? key, this.cityName = ''}) : super(key: key);
@@ -36,7 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
       return Future.error(showDialog(
           context: context,
           builder: (context) {
-            return ErrorDialog(
+            return const ErrorDialog(
               errorMesage:
                   'We could not find the city you entered. please check the city name.',
               errorTitle: 'City not found',
@@ -143,7 +143,7 @@ class _SearchScreenState extends State<SearchScreen> {
         if (widget.cityName.isEmpty) {
           showDialog(
             context: context,
-            builder: (_) => ErrorDialog(
+            builder: (_) => const ErrorDialog(
               errorMesage: 'Please enter a city name.',
               errorTitle: 'Empty Input',
             ),

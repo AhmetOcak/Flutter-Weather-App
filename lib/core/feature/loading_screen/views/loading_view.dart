@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:wheather_app/components/error_dialog.dart';
-import 'package:wheather_app/models/get_location.dart';
-import 'package:wheather_app/models/weather_model.dart';
-import 'package:wheather_app/services/weather_service.dart';
-import 'package:wheather_app/views/home_screen.dart';
+import 'package:wheather_app/core/components/alert_dialog/alert_dialog.dart';
+import 'package:wheather_app/core/feature/loading_screen/services/get_location.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:wheather_app/core/feature/home/model/weather_model.dart';
+import 'package:wheather_app/core/feature/home/services/weather_service.dart';
+import 'package:wheather_app/core/feature/home/view/home_view.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     } on PlatformException {
       showDialog(
         context: context,
-        builder: (_) => ErrorDialog(
+        builder: (_) => const ErrorDialog(
           errorMesage: 'We couldn\'t get the location. This error can be caused by bad internet. Please restart the application.',
           errorTitle: 'Location Error',
           killTheApp: true,

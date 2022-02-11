@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_icons/weather_icons.dart';
-import 'package:wheather_app/constants/constants.dart';
+import 'package:wheather_app/core/constants/constants.dart';
 
 class WeatherInfo extends StatelessWidget {
   const WeatherInfo({

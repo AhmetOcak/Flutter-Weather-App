@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wheather_app/components/search_button.dart';
-import 'package:wheather_app/components/weather_data_screen.dart';
-import 'package:wheather_app/components/weather_window.dart';
-import 'package:wheather_app/models/weather_model.dart';
+import 'package:wheather_app/core/components/button/search_button.dart';
+import 'package:wheather_app/core/feature/home/model/weather_data_screen.dart';
+import 'package:wheather_app/core/feature/home/model/weather_model.dart';
+import 'package:wheather_app/core/feature/home/model/weather_window.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({required this.weatherResponse});
+  const HomeScreen({Key? key, required this.weatherResponse}) : super(key: key);
 
   final WeatherResponse weatherResponse;
 

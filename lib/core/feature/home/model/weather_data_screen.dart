@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wheather_app/components/weather_info_section.dart';
 import 'package:weather_icons/weather_icons.dart';
+import 'package:wheather_app/core/feature/home/model/weather_info_section.dart';
 
 class WeatherDataScreen extends StatelessWidget {
   String feelsLike;

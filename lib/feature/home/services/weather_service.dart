@@ -1,9 +1,13 @@
 import 'dart:convert';
 
-import 'package:wheather_app/core/feature/home/model/weather_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:wheather_app/feature/home/model/weather_model.dart';
 
 class DataService {
+
+  final String _authority = 'api.openweathermap.org';
+  final String _unencodedPath = 'data/2.5/weather';
+
   Future<WeatherResponse> getWeatherData(String city) async {
     final queryParameters = {
       'appid': '18fcba115a2815e21a21379f65b994ed', // Enter your api key here
@@ -12,8 +16,8 @@ class DataService {
     };
 
     final uri = Uri.https(
-      'api.openweathermap.org',
-      'data/2.5/weather',
+      _authority,
+      _unencodedPath,
       queryParameters,
     );
     final response = await http.get(uri);

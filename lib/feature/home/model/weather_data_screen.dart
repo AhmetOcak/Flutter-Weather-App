@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:weather_icons/weather_icons.dart';
-import 'package:wheather_app/core/feature/home/model/weather_info_section.dart';
+import 'package:wheather_app/feature/home/model/weather_info_section.dart';
 
 class WeatherDataScreen extends StatelessWidget {
-  String feelsLike;
-  String windSpeed;
-  String pressure;
-  String sunrise;
-  String humidity;
-  String sunset;
+  final String feelsLike;
+  final String windSpeed;
+  final String pressure;
+  final String sunrise;
+  final String humidity;
+  final String sunset;
 
-  WeatherDataScreen({
+  const WeatherDataScreen({
     Key? key,
     this.feelsLike = 'xx',
     this.windSpeed = 'xx',

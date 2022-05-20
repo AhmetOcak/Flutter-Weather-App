@@ -1,4 +1,4 @@
-# weather_app
+# Weather App
 
 Hava durumu bilgileri Open Weather api ile alınmaktadır. Uygulama açılırken mevcut konumun hava durumu bilgilerini alır. Uygulamada istenilen bir şehrin hava durumu bilgileri de aranabilir.
 

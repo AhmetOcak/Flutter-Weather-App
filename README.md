@@ -2,11 +2,12 @@
 
 Weather information is obtained with the Open Weather api. Gets the current location's weather information when opening the app. Weather information of a desired city can also be searched in the application.
 
+Background images are taken from [Vecteezy.com](https://www.vecteezy.com/).
+
 Write the api key to the place specified in the weather service class.
-
-Background images are taken from Vecteezy.com.
-
-<br/>
+<p align="left" width="100%">
+  <img src="https://user-images.githubusercontent.com/73544434/172044930-74c69468-0619-4412-994d-58f4bd994c59.PNG" />
+</p>
 
 ## Libraries 📚
 [<li>Http</li>](https://pub.dev/packages/http)

@@ -10,17 +10,17 @@ Write the api key to the place specified in the weather service class.
 </p>
 
 ## Libraries 📚
-[<li>Http</li>](https://pub.dev/packages/http)
+* [Http](https://pub.dev/packages/http)
 
-[<li>Flutter Svg</li>](https://pub.dev/packages/flutter_svg)
+* [Flutter Svg](https://pub.dev/packages/flutter_svg)
 
-[<li>Geolocator</li>](https://pub.dev/packages/geolocator)
+* [Geolocator](https://pub.dev/packages/geolocator)
 
-[<li>Geocoding</li>](https://pub.dev/packages/geocoding)
+* [Geocoding](https://pub.dev/packages/geocoding)
 
-[<li>Flutter Spinkit</li>](https://pub.dev/packages/flutter_spinkit)
+* [Flutter Spinkit](https://pub.dev/packages/flutter_spinkit)
 
-[<li>Weather Icons</li>](https://pub.dev/packages/weather_icons)
+* [Weather Icons](https://pub.dev/packages/weather_icons)
 
 ## Images from app 🖼
 
